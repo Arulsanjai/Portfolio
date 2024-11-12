@@ -257,11 +257,7 @@ nav {
   display: grid;
   gap: 1rem;
 }
-.service__grid2 {
-  margin-top: 1rem;
-  display: grid;
-  gap: 1rem;
-}
+
 
 .service__card {
   padding: 2rem 1rem;
@@ -278,21 +274,7 @@ nav {
   font-size: 2rem;
 }
 
-.service__card2 span{
-  display: inline-block;
-  margin-bottom: 1rem;
-  font-size: 2rem;
-  
-}
-.service__card2 h4 {
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
-  font-weight: 700;
-}
-.service__card2 img{
-  height:150px;
-  width:150px;
-}
+
 .service__card h4 {
   margin-bottom: 1rem;
   font-size: 1.2rem;
@@ -342,9 +324,6 @@ nav {
 
 @media (width > 576px) {
   .service__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .service__grid2 {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -688,4 +667,91 @@ html, body {
   color: var(--extra-light);
 }
 
+
+.service__grid2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjusts columns based on screen width */
+  gap: 20px; /* Space between each card */
+  width: 100%;
+  max-width: 1200px;
+}
+
+.service__card2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.service__card2:hover {
+  transform: translateY(-10px);
+}
+
+.service__card2 img.imgg {
+  width: 80px; /* Adjust image size */
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.service__card2 h4 {
+  font-size: 1rem;
+  color: #333;
+  margin-top: 8px;
+}
+
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+  .section__container {
+    padding: 30px 15px; /* Reduced padding */
+  }
+
+  .service__grid2 {
+    grid-template-columns: repeat(2, 1fr); /* Two columns on small screens */
+    gap: 15px; /* Smaller gap between cards */
+  }
+
+  .section__header {
+    font-size: 1.5rem; /* Smaller header font size */
+  }
+
+  .service__card2 {
+    padding: 15px; /* Reduced padding for each card */
+  }
+
+  .service__card2 img.imgg {
+    width: 70px; /* Smaller image size for mobile */
+    height: 70px;
+  }
+
+  .service__card2 h4 {
+    font-size: 0.9rem; /* Smaller font size */
+  }
+}
+
+/* Extra Small Screen Adjustments */
+@media (max-width: 480px) {
+  .service__grid2 {
+    grid-template-columns: 1fr; /* Single column on very small screens */
+    gap: 10px; /* Small gap between cards */
+  }
+
+  .section__header {
+    font-size: 1.4rem;
+  }
+
+  .service__card2 {
+    padding: 10px;
+  }
+
+  .service__card2 h4 {
+    font-size: 0.85rem;
+  }
+}
 
