@@ -735,23 +735,3 @@ html, body {
   }
 }
 
-/* Extra Small Screen Adjustments */
-@media (max-width: 480px) {
-  .service__grid2 {
-    grid-template-columns: 1fr; /* Single column on very small screens */
-    gap: 10px; /* Small gap between cards */
-  }
-
-  .section__header {
-    font-size: 1.4rem;
-  }
-
-  .service__card2 {
-    padding: 10px;
-  }
-
-  .service__card2 h4 {
-    font-size: 0.85rem;
-  }
-}
-
