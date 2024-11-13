@@ -20,6 +20,7 @@
   box-sizing: border-box;
 }
 
+
 .section__container {
   max-width: var(--max-width);
   margin: auto;
@@ -164,7 +165,9 @@ nav {
 
 .header__content {
   text-align: center;
+
 }
+
 
 .header__content h1 {
   margin-bottom: 1rem;
@@ -189,25 +192,37 @@ nav {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Optional: Add shadow effect */
 }
 
-.header__content .section__description {
-  margin-bottom: 2rem;
-}
+
 
 .header__image {
   position: relative;
   isolation: isolate;
-  z-index: -1;
+  z-index: -2;
 }
+
 
 .header__image img {
-  max-width: 400px;
-  margin-inline: auto;
-  border-radius: 50%;
-  position: relative;
-  top: 10px; /* Moves the image 10px down */
-  left: 35px; /* Moves the image 15px to the right */
+  width: 300px; /* Set the desired width for the image */
+    height: 300px; /* Set the height to maintain the circular shape */
+    border-radius: 50%; /* Make the image round */
+    object-fit: cover; /* Ensure the image scales to fit within the circle */
+    object-position: top; /* Focus on the top portion of the image */
+    overflow: hidden; /* Hide any overflow to maintain the circular shape */
+    display: block; /* Ensure block display for centering */
+    margin: 0 auto;
+    
+ 
 }
-
+@media (min-width: 769px) {
+.header__content .section__description {
+  max-width: 70%; /* Limit the text width on desktop */
+  padding-left: 20px; /* Padding on the left */
+  padding-right: 20px; /* Padding on the right */
+  text-align: left; /* Align text to the left */
+  line-height: 1.8; /* Improve line height for readability */
+  margin: 0; /* Remove auto margin to align the text to the left */
+}
+}
 
 
 
@@ -735,3 +750,115 @@ html, body {
   }
 }
 
+/* Internship section styles */
+#internship {
+  background-color: #f4f4f4;
+  padding: 50px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+.container h2{
+  color: #02080f;
+}
+
+h2 {
+  color: #d7d0d0;
+  font-size: 30px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+p {
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.internship-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.company-image {
+  flex: 1;
+  margin-right: 20px;
+  text-align: center;
+}
+
+.company-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  object-fit: contain; /* Ensures the image fits within its container */
+}
+
+.details {
+  flex: 2;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.column {
+  flex: 1;
+  padding: 20px;
+  margin: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+.column:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.column h3 {
+  color: #333;
+  font-size: 22px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.column p, .column ul {
+  color: #555;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.column ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.column li {
+  margin-bottom: 10px;
+}
+
+/* Make the layout responsive */
+@media (max-width: 768px) {
+  .internship-details {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .company-image {
+      margin-bottom: 20px;
+  }
+
+  .column {
+      margin: 10px 0;
+  }
+}
